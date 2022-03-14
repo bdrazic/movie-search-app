@@ -60,7 +60,7 @@ const HeroSlide = () => {
     const getMovies = async () => {
       try {
         const res = await axios.get(
-          `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_API_KEY}&page=1`
+          `https://api.themoviedb.org/3/movie/popular?api_key=ef39aa20f094254dba3a502ea4a047e1&page=1`
         );
         setMovieItems(res.data.results.slice(0, 20));
         console.log(res);
@@ -75,7 +75,7 @@ const HeroSlide = () => {
     const getTopRated = async () => {
       try {
         const res = await axios.get(
-          `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US&page=1`
+          `https://api.themoviedb.org/3/movie/top_rated?api_key=ef39aa20f094254dba3a502ea4a047e1&language=en-US&page=1`
         );
         setTopRated(res.data.results);
         console.log(res);
