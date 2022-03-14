@@ -4,6 +4,8 @@ import { useState, useEffect, useContext } from "react";
 import { UilX } from "@iconscout/react-unicons";
 import { GlobalContext } from "../context/GlobalState";
 
+const API_KEY = "115bd368";
+
 const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -93,7 +95,7 @@ const MovieInfo = (props) => {
 
   useEffect(() => {
     axios
-      .get(`https://www.omdbapi.com/?i=${selectedMovie}&apikey=${process.env.REACT_APP_OMDB_API_KEY}`)
+      .get(`https://www.omdbapi.com/?i=${selectedMovie}&apikey=${API_KEY}`)
       .then((response) => {
         setMovieInfo(response.data);
         console.log(response);

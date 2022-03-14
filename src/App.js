@@ -11,6 +11,8 @@ import HeroSlide from "./components/HeroSlide";
 
 import { GlobalProvider } from "./context/GlobalState";
 
+const API_KEY = "115bd368";
+
 const Container = styled.div`
   // display: flex;
   // flex-direction: column;
@@ -109,7 +111,7 @@ function App() {
 
   const fetchData = async (searchString) => {
     const response = await axios.get(
-      `https://www.omdbapi.com/?s=${searchString}&apikey=${process.env.REACT_APP_OMDB_API_KEY}}`
+      `https://www.omdbapi.com/?s=${searchString}&apikey=${API_KEY}`
     );
     updatedMovieList(response.data.Search);
   };
